@@ -1,6 +1,4 @@
-nums = [1, 2, 3]
-nums2 = [4, 5]
+# for _ in range(5):
+#     print("Hello!")    
 
-
-num3 = nums+nums+nums2
-print(num3)
+print("Hello!" for _ in range(5))
