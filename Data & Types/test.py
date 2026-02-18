@@ -1,4 +1,4 @@
-# for _ in range(5):
-#     print("Hello!")    
+set_a = {1, 2, 300, -40, True, 'Fourty Four'}
 
-print("Hello!" for _ in range(5))
+for item in set_a:
+    print(item)
