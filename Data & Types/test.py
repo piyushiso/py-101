@@ -1,5 +1,8 @@
-set_a = {1, 2, 300, -40, 100, 'Fourty Four'}
+temps = {
+    'K': [10, 20, 30],
+    'H': [20, 30, 40]
+}
 
-# THESE ARE RANDOM AS WELL
-for item in set_a:
-    print(item)
+for k, v in temps.items():
+    av = sum(v)/len(v)
+    print(k, av)
