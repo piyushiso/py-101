@@ -1,15 +1,32 @@
+# Advised to create a virtual environment
+# python -m venv db-env
+# db-env\Scripts\activate
 # pip install mysql-connector-python
 
-import mysql.connector
+import mysql.connector as con
 
-connection = mysql.connector.connect("localhost", "root", "", "users")
+connection = con.connect(host='localhost', user='root', password='', database='users')
 
 if not connection.is_connected():
     print("ERROR CONNECTING TO THE DATABASE")
     quit()
     
-cusor = connection.cursor()
+cursor = connection.cursor()
 
-cusor.execute("SELECT * FROM accounts")
+cursor.execute("INSERT INTO accounts (username, password) VALUES('User', 'User')")
+# sql = "INSERT INTO accounts(username, password) VALUES(%s, %s)"
+# val = ("John", "Cena")
+# cursor.execute(sql, val)
+connection.commit()
 
-print(cusor.fetchall())
+print(cursor.rowcount, " records inserted")
+
+# cursor.execute("SELECT * FROM accounts")
+
+# # print(cusor.fetchall())
+
+# while True:
+#     data = cursor.fetchone()
+#     if data is None:
+#         break
+#     print(data)
